@@ -1,5 +1,5 @@
 <template>
   <div>
-    组件1
+    组件2
   </div>
 </template>

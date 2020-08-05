@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import dy from './components/dy.vue'
+
 export default {
   name: 'App',
 }
