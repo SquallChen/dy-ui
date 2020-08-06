@@ -3,13 +3,21 @@
 </template>
 
 <script lang="ts">
-import { ref, provide } from 'vue'
+import { ref, provide } from "vue";
+import { router } from "./router";
 export default {
-  name: 'App',
+  name: "App",
   setup(props) {
     const width = document.documentElement.clientWidth;
-    const menuVisible = ref(width<=500?false:true)
-    provide('menuVisible',menuVisible)
-  }
-}
+    console.log(width);
+    const menuVisible = ref(width <= 500 ? false : true);
+    console.log(menuVisible.value);
+    provide("menuVisible", menuVisible);
+    router.afterEach(() => {
+      if (width <= 500) {
+        menuVisible.value = false;
+      }
+    });
+  },
+};
 </script>
