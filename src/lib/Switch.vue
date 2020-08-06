@@ -9,7 +9,7 @@ export default {
   },
   setup(props,context) {
     const tooggle = ()=>{
-      context.emit('input',!props.value)
+      context.emit('update:value',!props.value)
     }
     return{tooggle}
   }
