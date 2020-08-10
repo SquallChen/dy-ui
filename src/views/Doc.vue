@@ -31,7 +31,14 @@ export default {
   components: { Topnav },
   setup() {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
-    console.log(menuVisible);
+    const resize = window.addEventListener("resize", () => {
+      let width = document.documentElement.clientWidth;
+      if(width<=500){
+        menuVisible.value = false;
+      }else{
+        menuVisible.value = true;
+      }
+    });
     return { menuVisible };
   },
 };
@@ -61,7 +68,7 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: #fff;
   }
 }
 aside {
