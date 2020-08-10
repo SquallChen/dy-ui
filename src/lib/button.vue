@@ -97,109 +97,92 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
+  &.dy-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.dy-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
   &.dy-theme-button {
-    &.dy-size-big {
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px;
-    }
-    &.dy-size-small {
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
-    &.dy-size-big {
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px;
-    }
-    &.dy-size-small {
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
-    &.dy-theme-button {
-      &.dy-level-main {
-        background: $blue;
-        color: white;
-        border-color: $blue;
-        &:hover,
-        &:focus {
-          background: darken($blue, 10%);
-          border-color: darken($blue, 10%);
-        }
-      }
-      &.dy-level-danger {
-        background: $red;
-        border-color: $red;
-        color: white;
-        &:hover,
-        &:focus {
-          background: darken($red, 10%);
-          border-color: darken($red, 10%);
-        }
+    &.dy-level-main {
+      background: $blue;
+      color: white;
+      border-color: $blue;
+      &:hover,
+      &:focus {
+        background: darken($blue, 10%);
+        border-color: darken($blue, 10%);
       }
     }
-    &.dy-theme-link {
-      &.dy-level-danger {
-        color: $red;
-        &:hover,
-        &:focus {
-          color: darken($red, 10%);
-        }
+    &.dy-level-danger {
+      background: $red;
+      border-color: $red;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($red, 10%);
+        border-color: darken($red, 10%);
       }
-    }
-    &.dy-theme-text {
-      &.dy-level-main {
-        color: $blue;
-        &:hover,
-        &:focus {
-          color: darken($blue, 10%);
-        }
-      }
-      &.dy-level-danger {
-        color: $red;
-        &:hover,
-        &:focus {
-          color: darken($red, 10%);
-        }
-      }
-    }
-    &.dy-theme-button {
-      &[disabled] {
-        cursor: not-allowed;
-        color: $grey;
-        &:hover {
-          border-color: $grey;
-        }
-      }
-    }
-    &.dy-theme-link,
-    &.dy-theme-text {
-      &[disabled] {
-        cursor: not-allowed;
-        color: $grey;
-      }
-    }
-    > .dy-loadingIndicator {
-      width: 14px;
-      height: 14px;
-      display: inline-block;
-      margin-right: 4px;
-      border-radius: 8px;
-      border-color: $blue $blue $blue transparent;
-      border-style: solid;
-      border-width: 2px;
-      animation: dy-spin 1s infinite linear;
     }
   }
-  @keyframes dy-spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
+  &.dy-theme-link {
+    &.dy-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
     }
   }
+  &.dy-theme-text {
+    &.dy-level-main {
+      color: $blue;
+      &:hover,
+      &:focus {
+        color: darken($blue, 10%);
+      }
+    }
+    &.dy-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.dy-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.dy-theme-link, &.dy-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+  > .dy-loadingIndicator{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: dy-spin 1s infinite linear;
+  }
+}
+@keyframes dy-spin {
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
 }
 </style>
