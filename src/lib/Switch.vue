@@ -1,5 +1,7 @@
 <template>
-  <button :class="{checked:value}" @click="tooggle"><span></span></button>
+  <button class="dy-switch" @click="toggle" :class="{'dy-checked':value}">
+    <span></span>
+  </button>
 </template>
 <script lang="ts">
 import { ref } from "vue";
@@ -8,17 +10,17 @@ export default {
     value: Boolean,
   },
   setup(props, context) {
-    const tooggle = () => {
+    const toggle = () => {
       context.emit("update:value", !props.value);
     };
-    return { tooggle };
+    return { toggle };
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.dy-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -35,7 +37,7 @@ button {
     border-radius: $h2 / 2;
     transition: all 250ms;
   }
-  &.checked {
+  &.dy-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -50,7 +52,7 @@ button {
       width: $h2 + 4px;
     }
   }
-  &.checked:active {
+  &.dy-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
