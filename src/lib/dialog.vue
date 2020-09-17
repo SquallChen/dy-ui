@@ -1,17 +1,21 @@
 <template>
   <template v-if="visible">
-    <div class="dy-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="dy-dialog-wrapper">
-      <div class="dy-dialog">
-        <header><slot name="title" /> <span @click="close" class="dy-dialog-close"></span></header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="dy-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="dy-dialog-wrapper">
+        <div class="dy-dialog">
+          <header>
+            <slot name="title" /> <span @click="close" class="dy-dialog-close"></span></header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
+    </Teleport>
   </template>
 </template>
 <script lang="ts">
@@ -22,44 +26,44 @@ export default {
       type: Boolean,
       default: false,
     },
-    closeOnClickOverlay:{
-      type:Boolean,
-      default:true
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
     },
-    ok:{
-      type:Function
+    ok: {
+      type: Function,
     },
-    cancel:{
-      type:Function
-    }
+    cancel: {
+      type: Function,
+    },
   },
   components: {
     Button,
   },
-  setup(props,context){
-    const close = ()=>{
-      context.emit('update:visible',false)
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
     };
-    const onClickOverlay = ()=>{
-      if(props.closeOnClickOverlay){
-        close()
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
       }
-    }
-    const ok = ()=>{
-      if(props.ok&&props.ok()!==false){
-        close()
+    };
+    const ok = () => {
+      if (props.ok && props.ok() !== false) {
+        close();
       }
-    }
-    const cancel = ()=>{
-      close()
-    }
+    };
+    const cancel = () => {
+      close();
+    };
     return {
       close,
       onClickOverlay,
       ok,
-      cancel
-    }
-  }
+      cancel,
+    };
+  },
 };
 </script>
 <style lang="scss">
