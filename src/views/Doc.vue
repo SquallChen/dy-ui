@@ -23,6 +23,7 @@
         <router-view></router-view>
       </main>
     </div>
+  </div>
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
