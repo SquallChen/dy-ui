@@ -1,21 +1,29 @@
 <template>
-  <div class="gulu-dialog-overlay"></div>
-  <div class="gulu-dialog-wrapper">
-    <div class="gulu-dialog">
-      <header>标题 <span class="gulu-dialog-close"></span></header>
-      <main>
-        <p>第一行字</p>
-        <p>第二行字</p>
-      </main>
-      <footer>
-        <Button level="main">OK</Button>
-        <Button>Cancel</Button>
-      </footer>
-    </div>
+  <template v-if="visible">
+    <div class="dy-dialog-overlay"></div>
+    <div class="dy-dialog-wrapper">
+      <div class="dy-dialog">
+        <header>标题 <span class="dy-dialog-close"></span></header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <footer>
+          <Button level="main">OK</Button>
+          <Button>Cancel</Button>
+        </footer>
+      </div>
+  </template>
 </template>
-<script type="ts">
+<script lang="ts">
 import Button from "./button.vue";
 export default {
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: {
     Button,
   },
@@ -24,7 +32,7 @@ export default {
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
-.gulu-dialog {
+.dy-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
