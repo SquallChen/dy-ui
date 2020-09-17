@@ -3,9 +3,9 @@
     <div class="dy-dialog-overlay" @click="onClickOverlay"></div>
     <div class="dy-dialog-wrapper">
       <div class="dy-dialog">
-        <header>{{title}} <span @click="close" class="dy-dialog-close"></span></header>
+        <header><slot name="title" /> <span @click="close" class="dy-dialog-close"></span></header>
         <main>
-          <slot />
+          <slot name="content"/>
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
@@ -18,10 +18,6 @@
 import Button from "./button.vue";
 export default {
   props: {
-    title:{
-      type:String,
-      default:'提示'
-    },
     visible: {
       type: Boolean,
       default: false,
