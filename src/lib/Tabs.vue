@@ -2,10 +2,10 @@
 <div class="dy-tabs">
   <div class="dy-tabs-nav">
     <div class="dy-tabs-nav-item" v-for="(t,index) in titles" @click="select(t)" :class="{selected: t=== selected}" :key="index">{{t}}</div>
+    <div class="dy-tabs-nav-indicator"></div>
   </div>
   <div class="dy-tabs-content">
-    <component class="dy-tabs-content-item" :class="{selected: c.props.title === selected }" v-for="(c,index) in defaults" :is="c" :key="index"/>
-
+    <component class="dy-tabs-content-item" :class="{selected: c.props.title === selected }" v-for="c in defaults" :is="c" />
   </div>
 </div>
 </template>
@@ -57,6 +57,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
     &-item {
       padding: 8px 0;
       margin: 0 16px;
@@ -67,6 +68,14 @@ $border-color: #d9d9d9;
       &.selected {
         color: $blue;
       }
+    }
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
     }
   }
   &-content {
