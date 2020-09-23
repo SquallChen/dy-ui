@@ -8,8 +8,11 @@ import { router } from "./router";
 export default {
   name: "App",
   setup(props) {
-    const width = document.documentElement.clientWidth;
+    let width = document.documentElement.clientWidth;
     const menuVisible = ref(width <= 500 ? false : true);
+    const resize = window.addEventListener('resize',()=>{
+      width = document.documentElement.clientWidth;
+    })
     provide("menuVisible", menuVisible);
     router.afterEach(() => {
       if (width <= 500) {

@@ -85,7 +85,7 @@ $h2: $h - 2px;
   &.dy-checked:active {
     > span {
       width: $h2 + 4px;
-      margin-left: -4px;
+      margin-left: -6px;
     }
   }
 }
@@ -112,7 +112,7 @@ $h2: $h - 2px;
   &.dy-checked:active {
     > span {
       width: $h2 + 6px;
-      margin-left: -6px;
+      margin-left: -4px;
     }
   }
 }
@@ -140,7 +140,7 @@ $h2: $h - 2px;
   &.dy-checked:active {
     > span {
       width: $h2 + 2px;
-      margin-left: -2px;
+      margin-left: -6px;
     }
   }
 }
