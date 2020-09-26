@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav class="nav" />
+    <Topnav toggleMenuButtonVisible class="nav" />
     <div class="content">
       <aside v-if="menuVisible">
         <h2>组件列表</h2>
@@ -20,7 +20,7 @@
         </ol>
       </aside>
       <main>
-        <router-view></router-view>
+        <router-view />
       </main>
     </div>
   </div>
@@ -34,9 +34,9 @@ export default {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
     const resize = window.addEventListener("resize", () => {
       let width = document.documentElement.clientWidth;
-      if(width<=500){
+      if (width <= 500) {
         menuVisible.value = false;
-      }else{
+      } else {
         menuVisible.value = true;
       }
     });
