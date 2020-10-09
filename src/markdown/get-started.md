@@ -7,7 +7,7 @@
 import {Button, Tabs, Switch, Dialog} from "dy-ui"
 ```
 
-就可以使用我提供的组件了。
+就可以使用该组件了。
 
 ## Vue 单文件组件
 

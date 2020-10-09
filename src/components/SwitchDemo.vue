@@ -12,20 +12,7 @@
       </div>
       <div class="dy-code-container">
         <div class="dy-code-wrapper" :class="{'dyShowCode':openOrHide.value1}">
-        <pre>
-          &lt;html&gt;
-          &lt;head&gt;
-            &lt;script type=&quot;text/javascript&quot; src=&quot;loadxmldoc.js&quot;&gt;
-          &lt;/script&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-            &lt;script type=&quot;text/javascript&quot;&gt;
-              xmlDoc=<a href="dom_loadxmldoc.asp">loadXMLDoc</a>(&quot;books.xml&quot;);
-              document.write(&quot;xmlDoc is loaded, ready for use&quot;);
-            &lt;/script&gt;
-          &lt;/body&gt;
-          &lt;/html&gt;
-          </pre>
+        <pre>{{Switch1Demo.__sourceCode}}</pre>
         </div>
         <a class="dy-openOrHide" @click="showCode('value1')"> {{openOrHide.value1?'隐藏代码':'显示代码'}} </a>
       </div>
@@ -40,20 +27,7 @@
       </div>
       <div class="dy-code-container">
         <div class="dy-code-wrapper" :class="{'dyShowCode':openOrHide.value2}">
-        <pre>
-          &lt;html&gt;
-          &lt;head&gt;
-            &lt;script type=&quot;text/javascript&quot; src=&quot;loadxmldoc.js&quot;&gt;
-          &lt;/script&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
-            &lt;script type=&quot;text/javascript&quot;&gt;
-              xmlDoc=<a href="dom_loadxmldoc.asp">loadXMLDoc</a>(&quot;books2.xml&quot;);
-              document.write(&quot;xmlDoc is loaded, ready for use&quot;);
-            &lt;/script&gt;
-          &lt;/body&gt;
-          &lt;/html&gt;
-          </pre>
+        <pre>{{Switch2Demo.__sourceCode}}</pre>
         </div>
         <a class="dy-openOrHide" @click="showCode('value2')"> {{openOrHide.value2?'隐藏代码':'显示代码'}} </a>
       </div>
@@ -68,14 +42,23 @@
           <Switch v-model:value="bool4" size="small" />
         </div>
       </div>
+      <div class="dy-code-container">
+        <div class="dy-code-wrapper" :class="{'dyShowCode':openOrHide.value3}">
+        <pre>{{Switch3Demo.__sourceCode}}</pre>
+        </div>
+        <a class="dy-openOrHide" @click="showCode('value3')"> {{openOrHide.value1?'隐藏代码':'显示代码'}} </a>
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Switch from "../lib/Switch.vue";
 import { reactive, ref } from "vue";
+import Switch1Demo from './switchSourceCode/Switch1.demo.vue'
+import Switch2Demo from './switchSourceCode/Switch2.demo.vue'
+import Switch3Demo from './switchSourceCode/Switch3.demo.vue'
 export default {
-  components: { Switch },
+  components: { Switch,Switch1Demo,Switch2Demo,Switch3Demo },
   setup(props) {
     const bool = ref(false);
     const bool2 = ref(false);
@@ -84,11 +67,12 @@ export default {
     const openOrHide = reactive({
       value1:false,
       value2:false,
+      value3:false,
     })
     const showCode = (val: String) => {
       openOrHide[val] =!openOrHide[val]
     };
-    return { bool, bool2, bool3, bool4, showCode,openOrHide };
+    return { bool, bool2, bool3, bool4, showCode,openOrHide,Switch1Demo,Switch2Demo,Switch3Demo };
   },
 };
 </script>

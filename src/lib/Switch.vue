@@ -1,6 +1,5 @@
 <template>
   <button class="dy-switch" @click="toggle" :class="classes" :disabled="disabled">
-    <!-- <button class="dy-switch" @click="toggle" :class="{'dy-checked':value}" :disabled="disabled"> -->
     <span></span>
   </button>
 </template>
