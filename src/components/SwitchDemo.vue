@@ -12,7 +12,7 @@
       </div>
       <div class="dy-code-container">
         <div class="dy-code-wrapper" :class="{'dyShowCode':openOrHide.value1}">
-        <pre>{{Switch1Demo.__sourceCode}}</pre>
+        <pre class="language-html" v-html="Prism.highlight(Switch1Demo.__sourceCode, Prism.languages.html, 'html')" />
         </div>
         <a class="dy-openOrHide" @click="showCode('value1')"> {{openOrHide.value1?'隐藏代码':'显示代码'}} </a>
       </div>
@@ -27,7 +27,7 @@
       </div>
       <div class="dy-code-container">
         <div class="dy-code-wrapper" :class="{'dyShowCode':openOrHide.value2}">
-        <pre>{{Switch2Demo.__sourceCode}}</pre>
+        <pre class="language-html" v-html="Prism.highlight(Switch2Demo.__sourceCode, Prism.languages.html, 'html')" />
         </div>
         <a class="dy-openOrHide" @click="showCode('value2')"> {{openOrHide.value2?'隐藏代码':'显示代码'}} </a>
       </div>
@@ -44,7 +44,7 @@
       </div>
       <div class="dy-code-container">
         <div class="dy-code-wrapper" :class="{'dyShowCode':openOrHide.value3}">
-        <pre>{{Switch3Demo.__sourceCode}}</pre>
+        <pre class="language-html" v-html="Prism.highlight(Switch3Demo.__sourceCode, Prism.languages.html, 'html')" />
         </div>
         <a class="dy-openOrHide" @click="showCode('value3')"> {{openOrHide.value1?'隐藏代码':'显示代码'}} </a>
       </div>
@@ -57,6 +57,9 @@ import { reactive, ref } from "vue";
 import Switch1Demo from './switchSourceCode/Switch1.demo.vue'
 import Switch2Demo from './switchSourceCode/Switch2.demo.vue'
 import Switch3Demo from './switchSourceCode/Switch3.demo.vue'
+import 'prismjs';
+import 'prismjs/themes/prism-coy.css'
+const Prism = (window as any).Prism
 export default {
   components: { Switch,Switch1Demo,Switch2Demo,Switch3Demo },
   setup(props) {
@@ -72,7 +75,7 @@ export default {
     const showCode = (val: String) => {
       openOrHide[val] =!openOrHide[val]
     };
-    return { bool, bool2, bool3, bool4, showCode,openOrHide,Switch1Demo,Switch2Demo,Switch3Demo };
+    return { bool, bool2, bool3, bool4, showCode,openOrHide,Switch1Demo,Switch2Demo,Switch3Demo,Prism };
   },
 };
 </script>
