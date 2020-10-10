@@ -11,7 +11,6 @@
   </div>
 </template>
 <script lang="ts">
-import Button from "../lib/Button.vue";
 import Demo from './Demo.vue'
 import Button1Demo from './buttonSourceCode/Button1.demo.vue'
 import Button2Demo from './buttonSourceCode/Button2.demo.vue'
@@ -20,7 +19,7 @@ import Button4Demo from './buttonSourceCode/Button4.demo.vue'
 import Button5Demo from './buttonSourceCode/Button5.demo.vue'
 
 export default {
-  components: { Demo,Button },
+  components: { Demo },
   setup(props) {
     return { Button1Demo,Button2Demo,Button3Demo,Button4Demo,Button5Demo};
   },
