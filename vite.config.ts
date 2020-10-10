@@ -12,11 +12,13 @@ export default {
       const file = fs.readFileSync(path).toString()
       const parsed = baseParse(file).children.find(n => n.tag === 'demo')
       const title = parsed.children[0].content
+      const description = parsed.children[1]?parsed.children[1].loc.source:''
       const main = file.split(parsed.loc.source).join('').trim()
       return `export default function (Component) {
         Component.__sourceCode = ${
         JSON.stringify(main)
         }
+        Component.__sourceDescription = ${JSON.stringify(description)}
         Component.__sourceCodeTitle = ${JSON.stringify(title)}
       }`.trim()
     }

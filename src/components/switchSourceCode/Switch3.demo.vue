@@ -1,5 +1,6 @@
 <demo>
-支持 'disabled'
+不同尺寸
+<p>添加属性 <code>size</code> 可设置按钮的尺寸大小，默认提供三种尺寸：big，normal，small</p>
 </demo>
 <template>
 <Switch v-model:value="bool1" size="big"/>

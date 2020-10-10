@@ -1,5 +1,6 @@
 <demo>
-常规用法
+基础用法
+<p></p>
 </demo>
 <template>
 <Switch v-model:value="bool" />

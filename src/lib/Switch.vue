@@ -25,7 +25,6 @@ export default {
     // const { value, size } = props;
     const toggle = () => {
       context.emit("update:value", !props.value);
-      console.log(props.value);
     };
     const classes = computed(() => {
       return {

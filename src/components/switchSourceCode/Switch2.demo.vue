@@ -1,5 +1,6 @@
 <demo>
-支持 'disabled'
+支持 disabled
+<p>添加属性 <code>disabled</code> 禁用开关按钮</p>
 </demo>
 <template>
 <Switch v-model:value="bool" disabled />
