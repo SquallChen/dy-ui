@@ -52,7 +52,7 @@ $border-color: #c5d9e8;
   margin: 16px 0 32px;
   > h2 {
     padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
+    // border-bottom: 1px solid $border-color;
   }
   &-component {
     padding: 16px;
