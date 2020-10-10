@@ -9,18 +9,14 @@
   </div>
 </template>
 <script lang="ts">
-import { reactive, ref } from "vue";
 import Switch1Demo from './switchSourceCode/Switch1.demo.vue'
 import Switch2Demo from './switchSourceCode/Switch2.demo.vue'
 import Switch3Demo from './switchSourceCode/Switch3.demo.vue'
 import Demo from './Demo.vue'
-import 'prismjs';
-import 'prismjs/themes/prism-coy.css'
-const Prism = (window as any).Prism
 export default {
   components: { Demo },
   setup(props) {
-    return { Switch1Demo,Switch2Demo,Switch3Demo,Prism };
+    return { Switch1Demo,Switch2Demo,Switch3Demo };
   },
 };
 </script>
