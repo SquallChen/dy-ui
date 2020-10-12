@@ -71,12 +71,12 @@ export default {
 </script>
 <style lang="scss">
 $radius: 4px;
-$border-color: #d9d9d9;
+$border-color: #ececec;
 .dy-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
-  min-width: 15em;
+  min-width: 20em;
   max-width: 90%;
   &-overlay {
     position: fixed;
@@ -96,11 +96,14 @@ $border-color: #d9d9d9;
   }
   > header {
     padding: 12px 16px;
+    color: #2c405a;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
     border-bottom: 1px solid $border-color;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 20px;
   }
   > main {
     padding: 12px 16px;
@@ -113,8 +116,8 @@ $border-color: #d9d9d9;
   &-close {
     position: relative;
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
     &::before,
     &::after {
