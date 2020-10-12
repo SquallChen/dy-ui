@@ -46,7 +46,8 @@ export default {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
     const resize = window.addEventListener("resize", () => {
       let width = document.documentElement.clientWidth;
-      if (width <= 500) {
+      let hasScrollbar = document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
+      if ((hasScrollbar&&width <= 480)||(!hasScrollbar&&width <= 500)) {
         menuVisible.value = false;
       } else {
         menuVisible.value = true;
