@@ -7,9 +7,8 @@ Dialog 示例2
 </template>
 
 <script lang="ts">
-import Button from "../../lib/Button.vue";
+import {Button,openDialog} from "../../lib/index";
 import { ref } from "vue";
-import { openDialog } from "../../lib/openDialog";
 export default {
   components: {
     Button,

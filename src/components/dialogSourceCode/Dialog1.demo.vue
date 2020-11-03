@@ -15,8 +15,7 @@ Dialog 示例1
 </template>
 
 <script lang="ts">
-import Dialog from "../../lib/Dialog.vue";
-import Button from "../../lib/Button.vue";
+import {Button,Dialog} from "../../lib/index";
 import { ref } from "vue";
 export default {
   components: {

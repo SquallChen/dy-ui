@@ -10,7 +10,7 @@
   </div>
 </template>
 <script lang="ts">
-import Tab from "./Tab.vue";
+import {Tab} from "./index";
 import { computed, ref, watchEffect, onMounted } from "vue";
 export default {
   props: {
