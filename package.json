@@ -1,9 +1,10 @@
 {
-  "name": "dy-ui",
+  "name": "dy-ui-frame",
   "version": "0.0.1",
   "files": [
     "dist/lib/*"
   ],
+  "main":"dist/lib/dy.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
