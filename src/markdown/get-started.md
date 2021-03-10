@@ -4,7 +4,8 @@
 然后在你的代码中写入下面的代码
 
 ```
-import {Button, Tabs, Switch, Dialog ,openDialog} from "dy-ui-frame"
+import {Button, Tab,Tabs, Switch, Dialog ,openDialog} from "dy-ui-frame"
+import 'dy-ui-frame/dist/lib/dy.css'
 ```
 
 就可以使用该组件了。
@@ -20,7 +21,7 @@ import {Button, Tabs, Switch, Dialog ,openDialog} from "dy-ui-frame"
   </div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog, openDialog} from "dy-ui-frame"
+import {Button, Tab, Tabs, Switch, Dialog, openDialog} from "dy-ui-frame"
 export default {
   components: {Button}
 }
