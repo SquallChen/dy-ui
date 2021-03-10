@@ -34,7 +34,9 @@ export default {
       openOrHide.value=!openOrHide.value
     };
     const html = computed(() => {
-      return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
+      let sourceCode = props.component.__sourceCode
+      sourceCode = sourceCode.replace('../../lib/index','dy-ui-frame')
+      return Prism.highlight(sourceCode, Prism.languages.html, 'html')
     })
     return {
       Prism,
